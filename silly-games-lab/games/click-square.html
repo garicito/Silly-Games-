@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Click The Square Game</h2>
+<p>Score: <span id="score">0</span></p>
+
+<div id="square"></div>
+
+<script>
+let score = 0
+let square = document.getElementById("square")
+
+square.style.width="80px"
+square.style.height="80px"
+square.style.background="red"
+square.style.position="absolute"
+
+function moveSquare(){
+    square.style.top = Math.random()*400 + "px"
+    square.style.left = Math.random()*400 + "px"
+}
+
+square.onclick = function(){
+    score++
+    document.getElementById("score").innerText = score
+    moveSquare()
+}
+
+moveSquare()
+</script>
+
+</body>
+</html>
